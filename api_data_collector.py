@@ -13,6 +13,7 @@ class ApiDataCollector(DataCollector):
         sequences = self.fetch_sequences(mrna_ids)
 
         for seq_record in sequences:
+
             yield(seq_record.id, seq_record.seq)
     
     def fetch_sequences(self, id_list):
