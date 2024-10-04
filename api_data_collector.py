@@ -9,7 +9,7 @@ class ApiDataCollector(DataCollector):
 
     def collect(self, *args):
         Entrez.email = self.email
-        mrna_ids = self.search_mrna("Homo sapiens[ORGN] AND NM_", retmax=10)
+        mrna_ids = self.search_mrna("Homo sapiens[ORGN] AND NM_", retmax=args[0])
         sequences = self.fetch_sequences(mrna_ids)
 
         for seq_record in sequences:
