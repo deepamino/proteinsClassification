@@ -1,4 +1,4 @@
-from file_writer import FileWriter
+from writer.file_writer import FileWriter
 
 class WriterFactory:
 

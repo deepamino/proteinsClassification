@@ -1,4 +1,4 @@
-from datacollector import DataCollector
+from collector.datacollector import DataCollector
 from Bio import Entrez, SeqIO
 
 class ApiDataCollector(DataCollector):
@@ -31,5 +31,5 @@ class ApiDataCollector(DataCollector):
         handle.close()
         
         id_list = record["IdList"]
-        print(f"Encontrados {len(id_list)} resultados.")
+        print(f"{len(id_list)} results found.")
         return id_list

@@ -1,5 +1,5 @@
-from file_data_collector import FileDataCollector
-from api_data_collector import ApiDataCollector
+from writer.file_data_collector import FileDataCollector
+from collector.api_data_collector import ApiDataCollector
 
 class CollectorFactory:
 

@@ -1,5 +1,5 @@
 
-from datacollector import DataCollector
+from collector.datacollector import DataCollector
 
 class FileDataCollector(DataCollector):
 
