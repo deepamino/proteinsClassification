@@ -132,7 +132,8 @@ The workflow of the DeepAmino architecture can be seen from two different perspe
 ---
 
 ### Credits
+This study was carried out by Ricardo Cárdenes Pérez and Susana Suárez Mendoza as part of an internship for the Bioinformatics course taught in the Data Science and Engineering degree at the University of Las Palmas de Gran Canaria.
+- [Ricardo Cárdenes Pérez](https://github.com/ricardocardn)
+- [Susana Suárez Mendoza](https://github.com/susanasrez)
 
-- Susana Suárez Mendoza
-- Ricardo Cárdenes Pérez
 ---
