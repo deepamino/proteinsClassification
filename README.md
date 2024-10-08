@@ -44,6 +44,11 @@ Both encodings allow capturing the distribution of amino acids in the sequence, 
 
 For instance:
 
+## 4. Analysis of results
+
+
+## 5.How to use the Aplication Programing Interface (API)
+
 
 
 <hr>
