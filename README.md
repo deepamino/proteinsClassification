@@ -1,7 +1,7 @@
 <h1 align="center">DeepAmino: Protein Classification</h1>
 
 <br>
-<h1 align="center">Study case 1: Proteins Classification</h1>
+<h1 align="center">Study case 1: Code </h1>
 
 ## 1. Description of the Process
 
@@ -45,11 +45,23 @@ Both encodings allow capturing the distribution of amino acids in the sequence, 
 For instance:
 
 ## 4. Analysis of results
-
+- analizar el dbscan
+- el kmeans
+- resultados luego a un experto
 
 ## 5.How to use the Aplication Programing Interface (API)
 
 
+## 6. Technologies
+Usadas: Herramientas y bibliotecas utilizadas y por
+qué fueron seleccionadas (e.g.,
+"Se utilizó Pandas para manipular
+datos por su facilidad en la limpieza de secuencias"
+
+## 7. Reasoning
+
+Explicación breve de por qué el enfoque
+implementado es adecuado para este tipo de problema.
 
 <hr>
 <h1 align="center">Study case 2: Architecture</h1>
