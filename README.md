@@ -33,7 +33,7 @@ DeepAmino, the aforementioned model, is a PLM that is able to predict protein ch
 Training and Prediction. Amazon SageMaker is a **fully managed machine learning service** that allows developers and data scientists to build, train, and deploy machine learning models quickly and easily. It removes the heavy lifting associated with the infrastructure, so you can focus on developing the model. 
 
 With SageMaker, you can:
-1. **Train**: It simplifies training by providing pre-configured environments and optimized infrastructure for distributed training, which allows for efficient use of resources when working with large datasets.
+1. **Train**: It simplifies training by providing pre-configured environments and optimized infrastructure for distributed training, which allows for efficient resource use when working with large datasets.
 2. **Deploy**: Once the model is trained, SageMaker allows for seamless deployment in production, providing a scalable inference endpoint. The endpoint can handle a high volume of requests, making it ideal for real-time prediction tasks.
 3. **Manage**: SageMaker provides tools to monitor model performance and automatically scale resources to handle varying workloads.
 
@@ -42,7 +42,7 @@ We will have two SageMaker services that accomplish the following tasks.
 - **SageMaker Predictor:** Deployed to serve inference requests once the model has been trained and validated, allowing predictions based on amino acid sequences provided by the users.
     
 #### **Amazon DynamoDB**
-- **Purpose:** Database for protein sequences. Each protein amino acid sequence obtained from the **ncbi API** has been also saved into a DynamoDB Table, **Protein-sequences**, which stores the name-sequence pairs. This doesn't exactly lead to redundancy, despite the fact that the same sequences, including some other relevant metadata, have been loaded to the Amazon S3 already. Indeed
+- **Purpose:** Database for protein sequences. Each protein amino acid sequence obtained from the **ncbi API** has been also saved into a DynamoDB Table, **Protein-sequences**, which stores the name-sequence pairs. This doesn't exactly lead to redundancy, even though the same sequences, including some other relevant metadata, have already been loaded to the Amazon S3. Indeed
 
 - A highly scalable NoSQL database used to store metadata or results from previous predictions, facilitating quick lookups and responses to users’ queries.
 
