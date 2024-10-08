@@ -1,4 +1,4 @@
-from collector.data_writer import DataWriter
+from writer.data_writer import DataWriter
 
 class FileWriter(DataWriter):
     def write(self, filename, data):

@@ -1,4 +1,4 @@
-from writer.file_data_collector import FileDataCollector
+from collector.file_data_collector import FileDataCollector
 from collector.api_data_collector import ApiDataCollector
 
 class CollectorFactory:
