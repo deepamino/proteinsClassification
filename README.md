@@ -1,6 +1,48 @@
 <h1 align="center">DeepAmino: Protein Classification</h1>
 
 <br>
+<h1 align="center">Study case 1: Proteins Classification</h1>
+
+## 1. Description of the Process
+
+This repository contains the code necessary to download amino acid chains from the National Center for Biotechnology Information through its Application Programming Interface (API), save them in files in a dataake and in a pandas dataframe in csv format. These are then used to try to classify the types of proteins using unsupervised learning techniques. Finally, conclusions are obtained that will be developed soon and it provides an API to be able to train the data with the hyperparameters that the user considers.
+
+## 2. Project Structure
+
+- **./data**: directory containing the datalake of amino acid chains used for protein classification.
+- **./dataframe**: directory containing the dataframe containing the amino acid sequences.
+- **./collector**: directory containing the code required to obtain the data, providing a key by using the factory method according to the user's needs, either by obtaining the data from the NCBI API or from a file folder’.
+    - **collector_factory.py**: The `CollectorFactory` class selects and initialises a data collector object by applying the Factory Method design pattern.
+    - **datacollector.py**: The `DataCollector` class is an abstract class that forces you to implement the collect method.
+    - **api_data_collector.py**: The `ApiDataCollector` class extends `DataCollector` and is responsible for collecting the aminoacids sequences from the NCBI database.
+    - **file_data_collector.py**: The `FileDataCollector` class extends `DataCollector` and is in charge of collecting data from a file.
+ - **./reader**: directory containing the code required to read the DataLake.
+    - **reader_factory.py**: The `ReaderFactory` class selects and initialises a data reader object by applying the Factory Method design pattern.
+    - **data_reader.py**: The `DataReader` class is an abstract class that forces you to implement the read method and set the datalake path.
+    - **read_datalake.py**: The `ReadDatalake` class extends `DataReader` and takes care of reading text files from a directory specified in `self.path`.
+- **./writer**: directory containing the code required to write the files of the datalake.
+    - **writer_factory.py**: The `WriterFactory` class selects and initialises a data writer object by applying the Factory Method design pattern.
+    - **data_writer.py**: The `DataWriter` class is an abstract class that forces you to implement the write method and set the datalake path.
+    - **file_writer.py**: The `FileWriter` class extends `DataWriter` and takes care of writing text files from a directory specified in `self.path`.
+ - **./encoder**: directory contianing the code required to encode the aminoacid chains.
+    - **encoder_factory.py**: The `EncoderFactory` class selects and initialises a data encoder object by applying the Factory Method design pattern.
+    - **bow_variation.py**: The `BOWVariation` class has two methods for encoding amino acid chains which will be explained in section 3.
+- **web_service.py**: provides an API using Flask that allows the classification of proteins using clustering techniques such as DBSCAN and K-Means.
+- **Project.ipynb**: notebook that shows how to use the code, the API and presents the visualisation of the results.
+
+## 3. Encoding the data
+
+In the context of unsupervised learning, it is essential to encode the data in such a way that the models can operate efficiently with it. In this study, a variation of the Bag of Words method has been implemented, as this approach does not consider the order of amino acid chains, which is a critical factor in protein classification.
+
+The function $\alpha(i,n)$ takes care of calculating a weight for each position $i$ in an amino acid sequence of length $n$, assigning a higher value to amino acids appearing at the beginning of the sequence and gradually decreasing towards the end.
+
+The first proposed encoding consists of a vector whose length is determined by the get_vector_byMaxN method, which initialises a vector of zeros with a length equal to the total number of possible amino acids. Subsequently, each amino acid in the sequence is traversed, determining its position in the vector by means of a dictionary that associates amino acids with indices. The corresponding value in the vector is then incremented by multiplying it by the weight calculated by $\alpha$, where $N$ represents the maximum length of a chain in the datalake.
+
+The second proposed encoding is similar to the first, with the exception that $N$ depends on the length of each amino acid chain.
+
+Both encodings allow capturing the distribution of amino acids in the sequence, weighting the importance of their position for further analysis.
+
+For example:
 
 <hr>
 <h1 align="center">Study case 2: Architecture</h1>
