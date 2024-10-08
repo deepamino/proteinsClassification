@@ -42,7 +42,9 @@ The second proposed encoding is similar to the first, with the exception that $N
 
 Both encodings allow capturing the distribution of amino acids in the sequence, weighting the importance of their position for further analysis.
 
-For example:
+For instance:
+
+
 
 <hr>
 <h1 align="center">Study case 2: Architecture</h1>
