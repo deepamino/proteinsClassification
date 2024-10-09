@@ -32,7 +32,10 @@ This repository contains the code necessary to download amino acid chains from t
 
 The following image shows a brief overview of the different modules described above.
 <p align="center">
-<img src="images/class-diagram.png" >
+    <img src="images/class-diagram.png" >
+</p>
+<p align="center">
+    <strong>Figure 1.</strong> Class diagram of the project's modules
 </p>
 
 ## 3. Encoding the data
@@ -59,7 +62,7 @@ The strings encoded using this first encoding are as follows:
 In this coding, the cosine similarity matrix is as follows:
 
 <p align="center">
-<img src="images/cosine-matrix-1.png" >
+<img src="images/cosine-matrix-1.svg" width = "250" >
 </p>
 
 2. Second encoding: In this encoding, the length is taken according to the length of the string to be encoded.
@@ -70,19 +73,55 @@ In this coding, the cosine similarity matrix is as follows:
 In this coding, the cosine similarity matrix is as follows:
 
 <p align="center">
-<img src="images/cosine-matrix-2.png" >
+<img src="images/cosine-matrix-2.svg" width="250">
 </p>
 
+Therefore, both similarity matrices reflect the high relationship between the first and third chains.
 
 ## 4. Analysis of results
-- analizar el dbscan
-- el kmeans
-- resultados luego a un experto
+
+In this study, the DBSCAN algorithm and K-means have been applied to each of the encodings. Firstly, it is noted that the DBSCAN algorithm is highly sensitive to hyperparameters, which results in an unclear visualisation of the clusters when using Principal Component Analysis (PCA), as shown in Figure 2. Despite this, the mean cosine similarity of each cluster is found to be considerably high, as presented in Figure 3.
+
+<p align="center">
+<img src="images/figure-2.png" width=700" >
+</p>
+<p align="center">
+    <strong>Figure 2.</strong> PCA for DBSCAN.
+</p>
+
+<p align="center">
+<img src="images/Table1.svg" width=300" >
+</p>
+<p align="center">
+    <strong>Figure 3.</strong> Average cosine similarity for DBSCAN clusters.
+</p>
+
+On the other hand, the elbow method has been implemented to determine the optimal number of k clusters before applying the K-means algorithm. The latter has shown an effective partitioning of the data, as can be seen in the PCA visualisation in Figure 4. Additionally, the similarities of the average cosine of the clusters turn out to be quite high, as indicated in Figure 5.
+
+<p align="center">
+<img src="images/figure-5.png" width=700" >
+</p>
+<p align="center">
+    <strong>Figure 4.</strong> PCA for KMeans.
+</p>
+
+<p align="center">
+<img src="images/Table2.svg" width=300" >
+</p>
+<p align="center">
+    <strong>Figure 5.</strong> Average cosine similarity for KMeans clusters.
+</p>
+
+Finally, this classification should be checked with an expert who will indicate which protein group is being classified.
 
 ## 5.How to use the Aplication Programing Interface (API)
 
 
 ## 6. Technologies
+- SKlearn
+- Pandas
+- flask
+- Notebooks
 Usadas: Herramientas y bibliotecas utilizadas y por
 qué fueron seleccionadas (e.g.,
 "Se utilizó Pandas para manipular
