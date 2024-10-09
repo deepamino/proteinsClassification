@@ -32,7 +32,7 @@ This repository contains the code necessary to download amino acid chains from t
 
 The following image shows a brief overview of the different modules described above.
 <p align="center">
-<img src="images/class-diagram.png" width="600">
+<img src="images/class-diagram.png" >
 </p>
 
 ## 3. Encoding the data
@@ -47,7 +47,32 @@ The second proposed encoding is similar to the first, with the exception that $N
 
 Both encodings allow capturing the distribution of amino acids in the sequence, weighting the importance of their position for further analysis.
 
-For instance:
+To understand both encodings more clearly, the following example is given. Suppose you have three amino acid chains: ABA, BBB and ABABB. It may happen that the first and third chains are of the same type, as they have a similar sequence. The procedure using both encodings is detailed below.
+- A dictionary is defined with the positions of each amino acid: `dict_positions = {A: 0, B: 1}`
+   
+1. First encoding: The maximum length of the strings is taken for the calculation: `n = max(length) = ababb = 5`
+The strings encoded using this first encoding are as follows:
+    - ABA: $\[1 \times \frac{(5-0)}{5} + 1 \times \frac{(5-2)}{5}, 1 \times \frac{(5-1)}{5}\] = [1.6, 0.8]$
+    - BBB: $\[0, 1 \times \frac{(5-0)}{5} + 1 \times \frac{(5-1)}{5} + 1 \times \frac{(5-2)}{5}\]  = [0, 2.4]$
+    - ABABB: $\[1 \times \frac{(5-0)}{5} + 1 \times \frac{(5-2)}{5}, 1 \times \frac{(5-1)}{5} + 1 \times \frac{(5-3)}{5} + 1 \times \frac{(5-4)}{5}\]  = [1.6, 1.4]$
+
+In this coding, the cosine similarity matrix is as follows:
+
+<p align="center">
+<img src="images/cosine-matrix-1.png" >
+</p>
+
+2. Second encoding: In this encoding, the length is taken according to the length of the string to be encoded.
+    - ABA: $\[1 \times \frac{(3-0)}{3} + 1 \times \frac{(3-2)}{3}, 1 \times \frac{(3-1)}{3}\] = [1.33, 0.66]$
+    - BBB: $\[0, 1 \times \frac{(3-0)}{3} + 1 \times \frac{(3-1)}{3} + 1 \times \frac{(3-2)}{3}\]  = [0, 2] $
+    - ABABB: $\[1 \times \frac{(5-0)}{5} + 1 \times \frac{(5-2)}{5}, 1 \times \frac{(5-1)}{5} + 1 \times \frac{(5-3)}{5} + 1 \times \frac{(5-4)}{5}\]  = [1.6, 1.4] $
+
+In this coding, the cosine similarity matrix is as follows:
+
+<p align="center">
+<img src="images/cosine-matrix-2.png" >
+</p>
+
 
 ## 4. Analysis of results
 - analizar el dbscan
