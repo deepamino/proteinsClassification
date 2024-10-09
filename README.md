@@ -170,8 +170,7 @@ To tackle this problem, the following technologies have been used:
 
 ## 7. Reasoning
 
-Explicación breve de por qué el enfoque
-implementado es adecuado para este tipo de problema.
+To conclude, we strongly believe that the proposed approach is a promising one, as it allows for the classification of proteins based on their amino acid sequences. The encoding methods presented in this study have shown to be effective in capturing the distribution of amino acids in the sequences, weighting the importance of their position for further analysis. The DBSCAN and K-means algorithms have been successfully applied to the encoded data, resulting in the clustering of proteins based on their amino acid sequences. The results obtained prove the existence of a high relationship between the amino acid sequences of proteins within the same cluster, as indicated by the average cosine similarity of the clusters. The API developed using Flask allows users to cluster proteins based on the parameters they provide, making the project available to the public. Thus, we believe that this study has the potential to contribute to the field of bioinformatics.
 
 <hr>
 <h1 align="center">Study case 2: Architecture</h1>
