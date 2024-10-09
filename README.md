@@ -116,6 +116,45 @@ Finally, this classification should be checked with an expert who will indicate 
 
 ## 5.How to use the Aplication Programing Interface (API)
 
+To make this project available to the public, an API has been developed using Flask, a Python web framework. The API allows users to cluster proteins based on the parameters they provide. There are two endpoints available:
+
+- **GET Method**: the GET method retrieves a serialized JSON object containing the amino acid sequence and the cluster to which it belongs to. After executing the following command, the user will receive a JSON object with the data.
+
+```bash
+curl -X GET http://localhost:5000/proteins-classification/data"
+```
+
+Result:
+
+```json
+{
+    'data': 
+        [
+            {
+                'cluster': 0,
+                'sequence':'GGGPSVFLFPPKPKDTLMISRTPEVTCVVVDVS...'
+            }, 
+            {
+                'cluster': 1, 
+                'sequence': 'MVEKGPEVSGKRRGRNNAAASASAAAASAAAA...'
+            },
+            ...,
+            {
+                'cluster': -1, 
+                'sequence': 'MVEKGPEVSGKRRGRNNAAASASAAAASAAAA...'
+            }
+        ]
+}
+```	
+
+- **POST Method**: the POST method allows the user to send a JSON object with the parameters to cluster the proteins. The user will be provided with a JSON object containing such parameters that will be used by clustering algorithms.
+
+```bash
+curl -X POST http://localhost:5000/proteins-classification/data -d '{"eps": 0.5, "min_samples": 5}'
+```
+
+The result obtained is similar to the one shown above.
+
 
 ## 6. Technologies
 - SKlearn
