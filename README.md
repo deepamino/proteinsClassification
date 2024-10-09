@@ -157,14 +157,16 @@ The result obtained is similar to the one shown above.
 
 
 ## 6. Technologies
-- SKlearn
-- Pandas
-- flask
-- Notebooks
-Usadas: Herramientas y bibliotecas utilizadas y por
-qué fueron seleccionadas (e.g.,
-"Se utilizó Pandas para manipular
-datos por su facilidad en la limpieza de secuencias"
+
+To tackle this problem, the following technologies have been used:
+
+- **Scikit-learn**: A machine learning library for Python that provides simple and efficient tools for data mining and data analysis. It's been extremely useful for clustering the proteins based on their amino acid sequences, since it offers a wide range of clustering algorithms, including DBSCAN and K-means, the ones used in this study.
+
+- **Pandas**: A fast, powerful, flexible, and easy-to-use open-source data analysis and data manipulation library built on top of the Python programming language. It has been used to store the amino acid sequences into a DataFrame, allowing manipulation and analysis of the data.
+
+- **Flask**: A lightweight web application framework that is designed with the ability to scale up to complex applications. It has been used to create the API that allows users to cluster proteins based on their amino acid sequences, as explained in the previous section.
+
+- **Notebooks**: Jupyter Notebooks have been used to develop the code, as they provide an interactive environment for data analysis and visualization. They have been extremely useful for testing and debugging the code, as well as for visualizing the results obtained.
 
 ## 7. Reasoning
 
