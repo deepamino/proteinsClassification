@@ -30,6 +30,11 @@ This repository contains the code necessary to download amino acid chains from t
 - **web_service.py**: provides an API using Flask that allows the classification of proteins using clustering techniques such as DBSCAN and K-Means.
 - **Project.ipynb**: notebook that shows how to use the code, the API and presents the visualisation of the results.
 
+The following image shows a brief overview of the different modules described above.
+<p align="center">
+<img src="images/class-diagram.png" width="600">
+</p>
+
 ## 3. Encoding the data
 
 In the context of unsupervised learning, it is essential to encode the data in such a way that the models can operate efficiently with it. In this study, a variation of the Bag of Words method has been implemented, as this approach does not consider the order of amino acid chains, which is a critical factor in protein classification.
