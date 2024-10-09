@@ -1,7 +1,7 @@
 <h1 align="center">DeepAmino: Protein Classification</h1>
 
 <br>
-<h1 align="center">Study case 1: Proteins Classification</h1>
+<h1 align="center">Study case 1: Code </h1>
 
 ## 1. Description of the Process
 
@@ -30,6 +30,11 @@ This repository contains the code necessary to download amino acid chains from t
 - **web_service.py**: provides an API using Flask that allows the classification of proteins using clustering techniques such as DBSCAN and K-Means.
 - **Project.ipynb**: notebook that shows how to use the code, the API and presents the visualisation of the results.
 
+The following image shows a brief overview of the different modules described above.
+<p align="center">
+<img src="images/class-diagram.png" width="600">
+</p>
+
 ## 3. Encoding the data
 
 In the context of unsupervised learning, it is essential to encode the data in such a way that the models can operate efficiently with it. In this study, a variation of the Bag of Words method has been implemented, as this approach does not consider the order of amino acid chains, which is a critical factor in protein classification.
@@ -44,7 +49,24 @@ Both encodings allow capturing the distribution of amino acids in the sequence, 
 
 For instance:
 
+## 4. Analysis of results
+- analizar el dbscan
+- el kmeans
+- resultados luego a un experto
 
+## 5.How to use the Aplication Programing Interface (API)
+
+
+## 6. Technologies
+Usadas: Herramientas y bibliotecas utilizadas y por
+qué fueron seleccionadas (e.g.,
+"Se utilizó Pandas para manipular
+datos por su facilidad en la limpieza de secuencias"
+
+## 7. Reasoning
+
+Explicación breve de por qué el enfoque
+implementado es adecuado para este tipo de problema.
 
 <hr>
 <h1 align="center">Study case 2: Architecture</h1>
@@ -132,7 +154,8 @@ The workflow of the DeepAmino architecture can be seen from two different perspe
 ---
 
 ### Credits
+This study was carried out by Ricardo Cárdenes Pérez and Susana Suárez Mendoza as part of an internship for the Bioinformatics course taught in the Data Science and Engineering degree at the University of Las Palmas de Gran Canaria.
+- [Ricardo Cárdenes Pérez](https://github.com/ricardocardn)
+- [Susana Suárez Mendoza](https://github.com/susanasrez)
 
-- Susana Suárez Mendoza
-- Ricardo Cárdenes Pérez
 ---
